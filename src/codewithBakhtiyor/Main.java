@@ -11,5 +11,4 @@ public class Main {
         numbers.removeAt(1);
         numbers.print();
     }
-    // test
 }
