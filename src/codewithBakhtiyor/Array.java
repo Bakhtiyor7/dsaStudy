@@ -42,4 +42,16 @@ public class Array {
         // shrink the array because after moving the items one step backwards there will empty element
         count--;
     }
+
+    // search operation
+    public int indexOf(int item) {
+        // if we find it we ruturn it,
+        // if we can't find it we return -1
+        for (int i = 0; i < count; i++)
+            if (items[i] == item)
+                return i;
+
+        return -1;
+
+    }
 }

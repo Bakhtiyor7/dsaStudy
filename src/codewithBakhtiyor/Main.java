@@ -8,7 +8,8 @@ public class Main {
         numbers.insert(30);
         numbers.insert(40);
         numbers.insert(50);
-        numbers.removeAt(1);
+//        numbers.removeAt(1);
+        System.out.println(numbers.indexOf(30));
         numbers.print();
     }
 }
