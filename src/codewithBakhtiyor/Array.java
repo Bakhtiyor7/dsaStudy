@@ -45,6 +45,9 @@ public class Array {
 
     // search operation
     public int indexOf(int item) {
+        // runtime complexity of this scenario is O(n) because the actions keep growing depending on the
+        // number of items in the array
+
         // if we find it we ruturn it,
         // if we can't find it we return -1
         for (int i = 0; i < count; i++)
