@@ -1,4 +1,4 @@
-package codewithBakhtiyor;
+package arrayFromScratch;
 
 public class Array {
     private int[] items;
