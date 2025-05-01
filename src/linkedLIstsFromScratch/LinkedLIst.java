@@ -1,5 +1,7 @@
 package linkedLIstsFromScratch;
 
+import java.util.NoSuchElementException;
+
 class LinkedLists {
    private class Node {
        private int value;
@@ -55,5 +57,27 @@ class LinkedLists {
     // created this logic in indexOf. so we can just re-use indexOf
    public boolean contains (int item) {
        return indexOf(item) != -1;
+   }
+
+   public void removeFirst() {
+       if(isEmpty())
+           throw new NoSuchElementException();
+
+       // if the list has only one item, only this step will be enough.
+       if (first == last) {
+           first = last = null;
+           return;
+       }
+       // 10 -> 20 -> 30
+       // we have to remove the link between 10 and 20 and declare 20 as the first node
+       // if we remove the link we can't just set 20 as the first node because
+       // we lose track of the second node. So we need a backup:
+       var second = first.next;
+       // after backup, we can remove the pointer:
+       first.next = null;
+       // and set second as the first node
+       first = second;
+
+
    }
 }
