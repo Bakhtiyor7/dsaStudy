@@ -77,7 +77,36 @@ class LinkedLists {
        first.next = null;
        // and set second as the first node
        first = second;
+   }
 
+   public void removeLast() {
+       if (isEmpty())
+           throw new NoSuchElementException();
 
+       if (first == last) {
+           first = last = null;
+           return;
+       }
+       // [10 -> 20 -> 30]
+       // previous = 20
+       // last -> 20
+
+       // first we should get the previous node of the last node:
+       var previous = getPrevious(last);
+       // then we set the previous node as the last node of the list
+       // and, we should remove the link so that the garbage collector
+       // can remove the last
+       // node from the list
+       last = previous;
+       last.next = null;
+   }
+
+   private Node getPrevious(Node node) {
+       var current = first;
+       while (current != null) {
+           if (current.next == node) return current;
+           current = current.next;
+       }
+       return current;
    }
 }
